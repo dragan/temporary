@@ -1,0 +1,29 @@
+use namespace="System"
+use namespace="System.Collections.Generic"
+use namespace="System.IO"
+use import="Files"
+
+var VERSION = "0.0.0"
+var VERSION_FULL = "${VERSION}"
+
+var CONFIGURATION = "Release"
+
+var ARTIFACTS_DIR = "${Directory.GetCurrentDirectory()}/artifacts"
+var OUTPUT_DIR = "${ARTIFACTS_DIR}/output"
+
+#default .clean .build .test
+
+#build .clean
+  build projectFile="ImageResizer.Quiz.sln" outputDir="${OUTPUT_DIR}" configuration="${CONFIGURATION}"
+
+#test .build
+  default fixieProgram='packages/Fixie.0.0.1.120/lib/net45/Fixie.Console.exe'
+  default testFile='${OUTPUT_DIR}/Parsers.Tests.dll'
+  exec-clr program='${fixieProgram}' commandline='${testFile}'
+
+#clean
+  directory delete="${ARTIFACTS_DIR}"
+  directory delete="src/Parsers/bin"
+  directory delete="src/Parsers/obj"
+  directory delete="src/Parsers.Tests/bin"
+  directory delete="src/Parsers.Tests/obj"

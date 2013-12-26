@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parsers.Tests", "src\Parsers.Tests\Parsers.Tests.csproj", "{F32865B6-3F79-448A-809C-1AAD50E1E379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parsers", "src\Parsers\Parsers.csproj", "{B3A80DAA-EDC3-42B1-A49A-1C0911B52BF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3A80DAA-EDC3-42B1-A49A-1C0911B52BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A80DAA-EDC3-42B1-A49A-1C0911B52BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A80DAA-EDC3-42B1-A49A-1C0911B52BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A80DAA-EDC3-42B1-A49A-1C0911B52BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32865B6-3F79-448A-809C-1AAD50E1E379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32865B6-3F79-448A-809C-1AAD50E1E379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32865B6-3F79-448A-809C-1AAD50E1E379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32865B6-3F79-448A-809C-1AAD50E1E379}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = src\Parsers.Tests\Parsers.Tests.csproj
+	EndGlobalSection
+EndGlobal
