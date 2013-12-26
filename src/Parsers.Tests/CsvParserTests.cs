@@ -58,6 +58,9 @@ public class CsvParserTests
 
     public static List<List<string>> Parse (string input)
     {
+        var escapedPattern = @"(^"")|(""$)";
+        var escapedRegex = new Regex (escapedPattern);
+
         var output = new List<List<string>> ();
 
         foreach (string line in Regex.Split (input, @"\r\n(?=(?:[^""]*""[^""]*"")*[^""]*$)")) {
@@ -65,7 +68,7 @@ public class CsvParserTests
             var fields = new List<string> ();
 
             foreach (string field in Regex.Split (line, @"\s*,\s*(?=(?:[^""]*""[^""]*"")*[^""]*$)")) {
-                fields.Add (field);
+                fields.Add (escapedRegex.Replace (field, ""));
             }
 
             output.Add (fields);
