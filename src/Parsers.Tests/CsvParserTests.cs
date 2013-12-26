@@ -58,7 +58,7 @@ public class CsvParserTests
 
     public static List<List<string>> Parse (string input)
     {
-        var escapedPattern = @"(^"")|(""$)";
+        var escapedPattern = @"(^"")|""(?=(?:[^""]*""[^""]*"")*[^""]*$)|(""$)";
         var escapedRegex = new Regex (escapedPattern);
 
         var output = new List<List<string>> ();
